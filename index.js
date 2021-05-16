@@ -1,5 +1,6 @@
 const Discord = require("discord.js");
 const config = require("./config.json");
+const ytdl = require('ytdl-core');
 
 const client = new Discord.Client();
 
@@ -16,6 +17,20 @@ client.login(config.BOT_TOKEN);
   });
 
 
+
+  client.on("ready", () => {
+    const channel = client.channels.cache.get("843349673716219958");
+    if (!channel) return console.error("The channel does not exist!");
+    channel.join().then(connection => {
+        // Yay, it worked!
+        console.log("Successfully connected.");
+    }).catch(e => {
+
+        // Oh no, it errored! Let's log it to console :)
+        console.error(e);
+    });
+});
+
 client.on('voiceStateUpdate', (oldState, newState) =>{
     // check for bot
     if (oldState.member.user.bot) return;
@@ -24,6 +39,14 @@ client.on('voiceStateUpdate', (oldState, newState) =>{
     else console.log('user moved channels', oldState.channelID, newState.channelID);
 
     console.log(newState);
+    
+    const broadcast = client.voice.createBroadcast();
+    broadcast.play('amateur.mp3');
+    //broadcast.play(ytdl('https://www.youtube.com/watch?v=Pke3A2XuBLg', { filter: 'audioonly', }));
+    // Play "music.mp3" in all voice connections that the client is in
+    for (const connection of client.voice.connections.values()) {
+        connection.play(broadcast);
+    }
 });
 
 client.on("message", function(message){
