@@ -1,0 +1,3 @@
+https://www.digitalocean.com/community/tutorials/how-to-build-a-discord-bot-with-node-js-es
+https://discord.js.org/#/docs/main/stable/class/User
+https://stackoverflow.com/questions/64342340/how-to-detect-when-a-user-joins-a-voice-channel

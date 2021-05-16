@@ -1,0 +1,22 @@
+{
+  "name": "mexi-bot",
+  "version": "1.0.0",
+  "description": "discord mexi-bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bonuz/mexi-bot.git"
+  },
+  "author": "FNC",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bonuz/mexi-bot/issues"
+  },
+  "homepage": "https://github.com/bonuz/mexi-bot#readme",
+  "dependencies": {
+    "discord.js": "^12.5.3"
+  }
+}
