@@ -6,8 +6,7 @@ const client = new Discord.Client();
 const prefix = "!";
 const channelCode = "608447650316156939";
 const mexiId = "608455853539852289";
-//client.login(config.BOT_TOKEN);
-client.login("ODQzMzUxODk4ODExNTMxMjc2.YKCmqQ.2VIsiBFtxMvfsP26SEhvWwlXlHQ");
+client.login(process.env.BOT_TOKEN);
 
 /**
  * The ready event is vital, it means that only _after_ this will your bot start reacting to information
