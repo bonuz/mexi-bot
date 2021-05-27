@@ -40,7 +40,8 @@ client.on('voiceStateUpdate', (oldState, newState) =>{
     //console.log(newState);
     
     if (newState.channelID === channelCode && newState.id === mexiId) {
-        Amateur();
+        console.log("Sale un amateur porque entro el mexican!")
+        amateur();
     }
 });
 
@@ -62,11 +63,14 @@ client.on("message", function(message){
         message.reply(`The sum of all the arguments you provided is ${sum}!`);
     }
     else if (command === "mexican") {
-        Amateur();
+        console.log("Sale un amateur desde comando!")
+        amateur();
+
     }
 });
 
-function Amateur(){
+function amateur(){
+    console.log("Adentro de amateur")
     const broadcast = client.voice.createBroadcast();
     broadcast.play('amateur.mp3');
     //broadcast.play(ytdl('https://www.youtube.com/watch?v=Pke3A2XuBLg', { filter: 'audioonly', }));
